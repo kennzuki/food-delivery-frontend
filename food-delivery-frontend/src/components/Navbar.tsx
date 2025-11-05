@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
+import SearchFilter from './SearchFilter';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('menu');
@@ -49,8 +50,8 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className='hidden md:flex gap-4 items-center'>
-          <input type='search' className='p-2 border rounded' placeholder='Search...' />
+        <div className='hidden md:flex gap-4 place-items-center items-center'>
+         <SearchFilter searchQuery="" onSearchange={() => {}} />
           <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
             shop
             <FaShoppingCart />
