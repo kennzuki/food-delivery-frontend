@@ -1,9 +1,11 @@
+import ExploreMenu from '../components/ExploreMenu';
 import Header from '../components/Header';
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
+          <Header />
+          <ExploreMenu />
     </div>
   );
 };
