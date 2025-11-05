@@ -2,6 +2,7 @@ import { food_list } from '../data/assets';
 import { useState } from 'react';
 import type { Menu } from '../types';
 import MenuCard from './MenuCard';
+import Pagination from './Pagination';
 
 const ExploreMenu = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,24 +14,7 @@ const ExploreMenu = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = food_list.slice(indexOfFirstItem, indexOfLastItem);
 
-  //pagination button render
-  const pagePagination = (
-    <div className='flex justify-center gap-2 mt-8'>
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button
-          key={index + 1}
-          onClick={() => setCurrentPage(index + 1)}
-          className={`${
-            currentPage === index + 1
-              ? 'bg-green-500 text-white'
-              : 'bg-gray-200 text-gray-800'
-          } px-4 py-2 rounded-md hover:bg-green-600 hover:text-white transition-colors duration-300`}
-        >
-          {index + 1}
-        </button>
-      ))}
-    </div>
-  );
+
   return (
     <div className='p-4 md:p-8'>
       <h1 className='text-2xl md:text-3xl capitalize font-bold mb-6'>
@@ -41,7 +25,7 @@ const ExploreMenu = () => {
           return <MenuCard key={item._id} item={item} />;
         })}
       </div>
-      {totalPages > 1 && pagePagination}
+      <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage}/>
     </div>
   );
 };
