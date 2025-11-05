@@ -6,7 +6,7 @@ type PostFilterProps = {
 
 const SearchFilter = ({ searchQuery, onSearchange }: PostFilterProps) => {
   return (
-    <div className='mb-6'>
+    <div className=''>
       <input
         type='text'
         placeholder='Search...'
