@@ -1,3 +1,5 @@
+import {  z } from 'zod'
+
 export type Menu = {
   _id: number;
   name: string;
@@ -15,3 +17,12 @@ export type Testimonial = {
     text: string;
     avatarColor?: string;
 };
+
+export const formSchema = z.object({
+  name: z.string().min(1, { message: 'Name is required' }),
+  email: z.string().min(1, { message: 'Email is required' }),
+  rating: z.number().min(1, { message: 'Rating is required' }),
+  review: z.string().min(1, { message: 'Review is required' }),
+});
+
+export type TFormSchemaType = z.infer<typeof formSchema>;

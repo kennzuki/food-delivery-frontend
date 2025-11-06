@@ -1,5 +1,9 @@
 // ...existing code...
-import { useForm, type FieldValues } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import type { TFormSchemaType } from '../types';
+import { formSchema } from '../types';
+
 
 const Testimonials = () => {
   const {
@@ -7,9 +11,13 @@ const Testimonials = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FieldValues>();
+  } = useForm<TFormSchemaType>({
+    resolver: zodResolver(formSchema),
+  });
 
-  const onSubmit = async (data: FieldValues) => {
+  
+
+  const onSubmit = async (data: TFormSchemaType) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log('testimonial submitted', data);
     reset();
@@ -39,7 +47,7 @@ const Testimonials = () => {
               <label className='sr-only'>Name</label>
               <input
                 type='text'
-                {...register('name', { required: 'Name is required' })}
+                {...register('name')}
                 className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition'
                 placeholder='Your name'
                 aria-invalid={errors.name ? 'true' : 'false'}
@@ -57,10 +65,6 @@ const Testimonials = () => {
                 type='email'
                 {...register('email', {
                   required: 'Email is required',
-                  minLength: {
-                    value: 5,
-                    message: 'Email must be at least 5 characters',
-                  },
                 })}
                 className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition'
                 placeholder='you@example.com'
@@ -78,7 +82,7 @@ const Testimonials = () => {
                 Rating
               </label>
               <select
-                {...register('rating', { required: 'Rating is required' })}
+                {...register('rating')}
                 className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition'
                 defaultValue='5'
               >
@@ -96,17 +100,17 @@ const Testimonials = () => {
             </div>
 
             <div>
-              <label className='sr-only'>Testimonial</label>
+              <label className='sr-only'>review</label>
               <textarea
-                {...register('text', { required: 'Testimonial is required' })}
+                {...register('review')}
                 rows={5}
                 className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition resize-none'
                 placeholder='Tell us about your experience...'
-                aria-invalid={errors.text ? 'true' : 'false'}
+                aria-invalid={errors.review ? 'true' : 'false'}
               />
-              {errors.text && (
+              {errors.review && (
                 <p className='text-red-500 text-sm mt-2'>
-                  {errors.text.message}
+                  {errors.review.message}
                 </p>
               )}
             </div>
@@ -114,7 +118,7 @@ const Testimonials = () => {
             <button
               type='submit'
               disabled={isSubmitting}
-              className='w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg disabled:opacity-50'
+              className='w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg disabled:opacity-50 cursor-pointer'
             >
               {isSubmitting ? 'Submitting...' : 'Submit Testimonial'}
             </button>
