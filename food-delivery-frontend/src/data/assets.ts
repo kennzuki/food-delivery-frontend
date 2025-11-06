@@ -1,4 +1,4 @@
-
+import type { Testimonial } from '../types'
 
 import food_1 from '../assets/food_1.png'
 import food_2 from '../assets/food_2.png'
@@ -311,3 +311,32 @@ export const food_list = [
         category: "Noodles"
     }
 ]
+
+
+
+export const testimonials: Testimonial[] = [
+    {
+        id: 1,
+        name: 'John Doe',
+        role: 'Regular customer',
+        rating: 5,
+        text: "I've really enjoyed my experience with this restaurant. The food was delicious and the staff were friendly and attentive. Highly recommended!",
+        avatarColor: 'bg-green-500',
+    },
+    {
+        id: 2,
+        name: 'Sarah Lee',
+        role: 'Food Blogger',
+        rating: 4,
+        text: "Great flavors and quick delivery. Portions are generous and presentation is on point. I'll order again.",
+        avatarColor: 'bg-yellow-500',
+    },
+    {
+        id: 3,
+        name: 'Michael Brown',
+        role: 'Student',
+        rating: 5,
+        text: "Amazing value for money. The ordering process was smooth and the food arrived hot. Love the variety on the menu.",
+        avatarColor: 'bg-blue-500',
+    },
+];

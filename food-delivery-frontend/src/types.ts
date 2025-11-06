@@ -6,3 +6,12 @@ export type Menu = {
   image: string;
   description: string;
 };
+
+export type Testimonial = {
+    id: number;
+    name: string;
+    role?: string;
+    rating: number;
+    text: string;
+    avatarColor?: string;
+};
