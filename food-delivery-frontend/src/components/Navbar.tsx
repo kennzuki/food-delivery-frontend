@@ -46,7 +46,7 @@ const Navbar = () => {
           >
             about
           </Link>
-          <Link to='/contact'
+          <Link to='/contacts'
             onClick={() => setMenu('contact')}
             className={`hover:text-green-500 ${
               menu === 'contact' ? 'underline' : ''
@@ -107,7 +107,7 @@ const Navbar = () => {
           >
             about
           </Link>
-          <Link to='/contact'
+          <Link to='/contacts'
             onClick={() => {
               setMenu('contact');
               setIsOpen(false);

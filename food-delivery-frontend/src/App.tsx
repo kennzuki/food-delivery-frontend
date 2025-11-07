@@ -8,6 +8,7 @@ import Testimonials from './pages/Testimonials';
 import Menu from './pages/Menu';
 import Footer from './components/Footer';
 import About from './pages/About';
+import Contacts from './pages/Contacts';
 function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/menu" element={<Menu/>} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
