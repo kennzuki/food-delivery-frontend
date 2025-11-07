@@ -5,6 +5,8 @@ import Orders from './pages/Orders';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import Testimonials from './pages/Testimonials';
+import Menu from './pages/Menu';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/menu" element={<Menu/>} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -13,7 +13,7 @@ export type Testimonial = {
     id: number;
     name: string;
     role?: string;
-    rating: number;
+    rating: string;
     text: string;
     avatarColor?: string;
 };
@@ -21,7 +21,7 @@ export type Testimonial = {
 export const formSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().min(1, { message: 'Email is required' }),
-  rating: z.number().min(1, { message: 'Rating is required' }),
+  rating: z.string().min(1, { message: 'Rating is required' }),
   review: z.string().min(1, { message: 'Review is required' }),
 });
 
