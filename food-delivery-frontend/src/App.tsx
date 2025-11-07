@@ -7,7 +7,7 @@ import NotFound from './pages/NotFound';
 import Testimonials from './pages/Testimonials';
 import Menu from './pages/Menu';
 import Footer from './components/Footer';
-
+import About from './pages/About';
 function App() {
   return (
     <div>
@@ -18,6 +18,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/menu" element={<Menu/>} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
