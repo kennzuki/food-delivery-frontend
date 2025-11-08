@@ -57,12 +57,14 @@ const Navbar = () => {
         </ul>
 
         <div className='hidden md:flex gap-4 place-items-center items-center'>
-          <SearchFilter searchQuery='' onSearchange={() => {}} />
+          <SearchFilter searchQuery='' onSearchange={() => { }} />
+          <Link to='/cart'>
           <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
             shop
             <FaShoppingCart />
             <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
-          </button>
+            </button>
+          </Link>
           <button className='py-2 px-4 rounded border hover:bg-gray-100'>
             Sign in
           </button>
@@ -124,6 +126,8 @@ const Navbar = () => {
               className='p-2 border rounded'
               placeholder='Search...'
             />
+            {/* cart */}
+            <Link to='/cart>'>
             <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
               - shop - <FaShoppingCart />-{' '}
               <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
@@ -137,6 +141,7 @@ const Navbar = () => {
               </span>
               +{' '}
             </button>
+            </Link>
             <button className='py-2 px-4 rounded border hover:bg-gray-100'>
               Sign in
             </button>

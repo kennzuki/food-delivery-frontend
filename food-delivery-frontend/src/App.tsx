@@ -9,6 +9,7 @@ import Menu from './pages/Menu';
 import Footer from './components/Footer';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
+import MenuDetails from './pages/MenuDetails';
 function App() {
   return (
     <div>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/menu" element={<Menu/>} />
+        <Route path="/menu/:id" element={<MenuDetails/>} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts/>} />
