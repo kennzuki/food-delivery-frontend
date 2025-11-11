@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
 import type { Menu } from '../types';
+import { fetchMenu } from '../api/menu';
 
 const MenuCard = ({ item }: { item: Menu }) => {
+  console.log(fetchMenu);
+  
   return (
     <div className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
       <div className='relative w-full h-48 mb-4'>

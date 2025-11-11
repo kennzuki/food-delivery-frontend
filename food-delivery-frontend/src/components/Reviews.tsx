@@ -1,4 +1,4 @@
-import { testimonials } from '../data/assets';
+
 import type { Testimonial } from '../types';
 import { Link } from 'react-router';
 // import Star from './Star';
@@ -21,7 +21,8 @@ const Star = ({ filled }: { filled: boolean }) => (
 const Reviews = () => {
   return (
     <section className='py-8 px-4 md:px-8 bg-gray-50 mx-auto'>
-      <div className='max-w-7xl mx-auto'>
+      <p className="">reviews</p>
+      {/* <div className='max-w-7xl mx-auto'>
         <header className='mb-6 text-center'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
             What <span className='text-green-600'>people say</span>
@@ -90,7 +91,7 @@ const Reviews = () => {
         <button className='py-3 px-6 mt-6 rounded-md bg-green-600 text-white'>
           write a review
         </button>
-      </Link>
+      </Link> */}
     </section>
   );
 };
