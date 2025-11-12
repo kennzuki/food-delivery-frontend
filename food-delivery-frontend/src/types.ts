@@ -14,7 +14,7 @@ export type Testimonial = {
     id: number;
     name: string;
     role?: string;
-    rating: string;
+    rating: number;
     text: string;
     avatarColor?: string;
 };
