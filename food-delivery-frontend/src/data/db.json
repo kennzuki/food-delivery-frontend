@@ -15,7 +15,8 @@
       "image": "/food_2.png",
       "price": 18,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salads"
+      "category": "Salads",
+      "featured": false
     },
     {
       "_id": "3",
@@ -23,7 +24,8 @@
       "image": "/food_3.png",
       "price": 16,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salads"
+      "category": "Salads",
+      "featured": false
     },
     {
       "_id": "4",
@@ -40,7 +42,8 @@
       "image": "/food_5.png",
       "price": 14,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls"
+      "category": "Rolls",
+      "featured": false
     },
     {
       "_id": "6",
@@ -48,7 +51,8 @@
       "image": "/food_6.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls"
+      "category": "Rolls",
+      "featured": false
     },
     {
       "_id": "7",
@@ -65,7 +69,8 @@
       "image": "/food_8.png",
       "price": 15,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls"
+      "category": "Rolls",
+      "featured": false
     },
     {
       "_id": "9",
@@ -73,7 +78,8 @@
       "image": "/food_9.png",
       "price": 14,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Deserts"
+      "category": "Deserts",
+      "featured": false
     },
     {
       "_id": "10",
@@ -90,7 +96,8 @@
       "image": "/food_11.png",
       "price": 10,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Deserts"
+      "category": "Deserts",
+      "featured": false
     },
     {
       "_id": "12",
@@ -98,7 +105,8 @@
       "image": "/food_12.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Deserts"
+      "category": "Deserts",
+      "featured": false
     },
     {
       "_id": "13",
@@ -106,7 +114,8 @@
       "image": "/food_13.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Sandwiches"
+      "category": "Sandwiches",
+      "featured": false
     },
     {
       "_id": "14",
@@ -114,7 +123,8 @@
       "image": "/food_14.png",
       "price": 18,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Sandwiches"
+      "category": "Sandwiches",
+      "featured": false
     },
     {
       "_id": "15",
@@ -131,7 +141,8 @@
       "image": "/food_16.png",
       "price": 24,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Sandwiches"
+      "category": "Sandwiches",
+      "featured": false
     },
     {
       "_id": "17",
@@ -139,7 +150,8 @@
       "image": "/food_17.png",
       "price": 14,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Cakes"
+      "category": "Cakes",
+      "featured": false
     },
     {
       "_id": "18",
@@ -147,7 +159,8 @@
       "image": "/food_18.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Cakes"
+      "category": "Cakes",
+      "featured": false
     },
     {
       "_id": "19",
@@ -164,7 +177,8 @@
       "image": "/food_20.png",
       "price": 15,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Cakes"
+      "category": "Cakes",
+      "featured": false
     },
     {
       "_id": "21",
@@ -172,7 +186,8 @@
       "image": "/food_21.png",
       "price": 14,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Vegetarian"
+      "category": "Vegetarian",
+      "featured": false
     },
     {
       "_id": "22",
@@ -189,7 +204,8 @@
       "image": "/food_23.png",
       "price": 10,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Vegetarian"
+      "category": "Vegetarian",
+      "featured": false
     },
     {
       "_id": "24",
@@ -197,7 +213,8 @@
       "image": "/food_24.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Vegetarian"
+      "category": "Vegetarian",
+      "featured": false
     },
     {
       "_id": "25",
@@ -205,7 +222,8 @@
       "image": "/food_25.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Pastas"
+      "category": "Pastas",
+      "featured": false
     },
     {
       "_id": "26",
@@ -213,7 +231,8 @@
       "image": "/food_26.png",
       "price": 18,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Pastas"
+      "category": "Pastas",
+      "featured": false
     },
     {
       "_id": "27",
@@ -221,7 +240,8 @@
       "image": "/food_27.png",
       "price": 16,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Pastas"
+      "category": "Pastas",
+      "featured": false
     },
     {
       "_id": "28",
@@ -238,7 +258,8 @@
       "image": "/food_29.png",
       "price": 14,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Noodles"
+      "category": "Noodles",
+      "featured": false
     },
     {
       "_id": "30",
@@ -246,7 +267,8 @@
       "image": "/food_30.png",
       "price": 12,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Noodles"
+      "category": "Noodles",
+      "featured": false
     },
     {
       "_id": "31",
@@ -254,7 +276,8 @@
       "image": "/food_31.png",
       "price": 20,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Noodles"
+      "category": "Noodles",
+      "featured": false
     },
     {
       "_id": "32",
@@ -262,7 +285,8 @@
       "image": "/food_32.png",
       "price": 15,
       "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Noodles"
+      "category": "Noodles",
+      "featured": false
     }
   ],
   "Testimonials": [

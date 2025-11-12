@@ -7,6 +7,7 @@ export type Menu = {
   price: number;
   image: string;
   description: string;
+  featured: boolean;
 };
 
 export type Testimonial = {

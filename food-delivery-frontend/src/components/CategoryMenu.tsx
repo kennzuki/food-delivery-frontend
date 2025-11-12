@@ -1,4 +1,11 @@
-const CategoryMenu = ({ categories, selectedCategory, setSelectedCategory, setCurrentPage }) => {
+type CategoryMenuProps = {
+    categories: string[];
+    selectedCategory: string;
+    setSelectedCategory: (category: string) => void;
+    setCurrentPage: (page: number) => void;
+}
+
+const CategoryMenu = ({ categories, selectedCategory, setSelectedCategory, setCurrentPage }: CategoryMenuProps) => {
     return ( 
          <div className='flex flex-wrap gap-2  mb-8'>
         {categories.map((category) => (

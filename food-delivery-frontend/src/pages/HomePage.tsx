@@ -1,15 +1,14 @@
-import ExploreMenu from '../components/ExploreMenu';
+import FeaturedMenu from '../components/Featured';
 import Header from '../components/Header';
 import Reviews from '../components/Reviews';
-
 
 const HomePage = () => {
   return (
     <div>
       <Header />
-      <ExploreMenu />
+      <FeaturedMenu />
+
       <Reviews />
-      
     </div>
   );
 };

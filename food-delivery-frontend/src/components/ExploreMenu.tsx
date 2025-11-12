@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 import axios from 'axios';
 import CategoryMenu from './CategoryMenu';
 
+
 const ExploreMenu = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,12 +55,18 @@ const ExploreMenu = () => {
   const currentItems = filteredMenu.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className='p-4 md:p-8'>
+    <div className='p-4 md:p-8 m-8'>
       <h1 className='text-2xl md:text-3xl capitalize font-bold mb-6'>
         Explore our menu
       </h1>
       {/* category buttons */}
-     <CategoryMenu categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setCurrentPage={setCurrentPage} />
+      <CategoryMenu
+        categories={categories}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        setCurrentPage={setCurrentPage}
+      />
+
       {/* //all the menu */}
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {currentItems.map((item: Menu) => {

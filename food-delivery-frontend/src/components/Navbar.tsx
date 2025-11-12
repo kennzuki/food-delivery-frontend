@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='max-w-6xl mx-auto p-4 md:p-8'>
+    <nav className='max-w-6xl mx-auto p-4 md:p-8 mb-8'>
       <div className='flex justify-between items-center'>
         <Link to='/' className='flex items-center gap-2'>
           <h1 className='text-2xl md:text-3xl font-bold uppercase text-green-500'>
