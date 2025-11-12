@@ -4,7 +4,7 @@ const Header = () => {
             <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: "url('./src/assets/header_img.png')",
+                    backgroundImage: "url('/header_img.png')",
                     opacity: '0.7'
                 }}
             ></div>

@@ -3,6 +3,7 @@ import type { Menu } from '../types';
 import MenuCard from './MenuCard';
 import Pagination from './Pagination';
 import axios from 'axios';
+import CategoryMenu from './CategoryMenu';
 
 const ExploreMenu = () => {
   const [foods, setFoods] = useState([]);
@@ -58,24 +59,7 @@ const ExploreMenu = () => {
         Explore our menu
       </h1>
       {/* category buttons */}
-      <div className='flex flex-wrap gap-2  mb-8'>
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => {
-              setSelectedCategory(category);
-              setCurrentPage(1);
-            }}
-            className={`${
-              selectedCategory === category
-                ? 'bg-green-500 text-white'
-                : 'bg-gray-200 text-gray-800'
-            } px-4 py-2 rounded-md hover:bg-green-600 hover:text-white transition-colors duration-300`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+     <CategoryMenu categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setCurrentPage={setCurrentPage} />
       {/* //all the menu */}
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {currentItems.map((item: Menu) => {
