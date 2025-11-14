@@ -9,7 +9,7 @@ const Cart = () => {
             name: "Chicken Burger",
             price: 599,
             quantity: 2,
-            image: "/images/burger.jpg"
+            image: "/public/food_1.png"
         },
         {
             id: 2,

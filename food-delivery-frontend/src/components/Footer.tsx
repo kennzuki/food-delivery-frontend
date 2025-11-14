@@ -26,7 +26,7 @@ const Footer = () => {
             <Link to='/about'>
               <a href='#'>About</a>
             </Link>
-            <Link to='/contact'>
+            <Link to='/contacts'>
               <a href='#'>Contact</a>
             </Link>
           </ul>

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import api from '../lib/axios';
 
+
 const Star = ({ filled }: { filled: boolean }) => (
   <svg
     className={`w-4 h-4 ${filled ? 'text-yellow-400' : 'text-gray-300'}`}
@@ -19,15 +20,19 @@ const Star = ({ filled }: { filled: boolean }) => (
 );
 
 const Reviews = () => {
-  // Fetch testimonials using TanStack Query
-  const { data: testimonials, isLoading, isError, error } = useQuery({
+  const {
+    data: testimonials,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ['testimonials'],
     queryFn: async () => {
       const response = await api.get('/testimonials');
       return response.data;
     },
-    // staleTime: 5 * 60 * 1000, // 5 minutes
-    // gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
   });
 
   if (isLoading) {
@@ -47,7 +52,9 @@ const Reviews = () => {
       <section className='py-8 px-4 md:px-8 bg-gray-50 mx-auto'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center py-8'>
-            <p className='text-red-600'>Error loading testimonials: {error.message}</p>
+            <p className='text-red-600'>
+              Error loading testimonials: {error.message}
+            </p>
           </div>
         </div>
       </section>
@@ -92,7 +99,9 @@ const Reviews = () => {
                     >
                       {t.name}
                     </h3>
-                    {t.role && <p className='text-xs text-gray-500'>{t.role}</p>}
+                    {t.role && (
+                      <p className='text-xs text-gray-500'>{t.role}</p>
+                    )}
                   </div>
                 </div>
                 <div className='flex items-center mb-3' aria-hidden='true'>

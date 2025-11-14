@@ -19,6 +19,20 @@ export type Testimonial = {
     avatarColor?: string;
 };
 
+export type CartContextType = {
+  cart: Menu[];
+  addToCart: (food:string) => void;
+  removeFromCart: (foodId:string) => void;
+  updateQuantity: (foodId: string) => void;
+  increaseQuantity: (foodId: string) => void;
+  decreaseQuantity: (foodId: string) => void;
+  clearCart: () => void;
+  getTotalItems: () => number;
+  getTotalPrice: () => number;
+  isInCart: (foodId: string) => boolean;
+  getItemQuantity: (foodId: string) => number;
+}
+
 export const formSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().min(1, { message: 'Email is required' }),
