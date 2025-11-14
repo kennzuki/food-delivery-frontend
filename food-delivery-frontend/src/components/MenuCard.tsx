@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
-import type { Menu } from '../types';
+import type {Food} from '../types';
 import { fetchMenu } from '../api/menu';
 
-const MenuCard = ({ item }: { item: Menu }) => {
+const MenuCard = ({ item }: { item: Food }) => {
   console.log(fetchMenu);
   
   return (
@@ -21,6 +21,12 @@ const MenuCard = ({ item }: { item: Menu }) => {
         <Link to={`/menu/${item._id}`}>
           <button className='mt-4 w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300'>
             Add to Cart
+          </button>
+         
+        </Link>
+        <Link to={`/menu/${item._id}`}>
+          <button className='mt-4 w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300'>
+            View Details
           </button>
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Menu } from '../types';
+import type { Food} from '../types';
 import MenuCard from './MenuCard';
 import Pagination from './Pagination';
 import axios from 'axios';
@@ -35,7 +35,7 @@ const ExploreMenu = () => {
 
   const itemsPerPage = 12;
 
-  const food_list: Menu[] = foods;
+  const food_list:Food[] = foods;
 
   //get unique categories
   const categories = [
@@ -69,7 +69,7 @@ const ExploreMenu = () => {
 
       {/* //all the menu */}
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
-        {currentItems.map((item: Menu) => {
+        {currentItems.map((item: Food) => {
           return <MenuCard key={item._id} item={item} />;
         })}
       </div>

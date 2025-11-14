@@ -1,29 +1,39 @@
 import {  z } from 'zod'
 
-export type Menu = {
-  _id: number;
+export interface Food {
+  _id: string;
   name: string;
-  category: string;
-  price: number;
   image: string;
+  price: number;
   description: string;
-  featured: boolean;
-};
+  category: string;
+  featured?: boolean;
+}
 
-export type Testimonial = {
-    id: number;
-    name: string;
-    role?: string;
-    rating: number;
-    text: string;
-    avatarColor?: string;
-};
+export interface CartItem extends Food {
+  quantity: number;
+}
 
-export type CartContextType = {
-  cart: Menu[];
-  addToCart: (food:string) => void;
-  removeFromCart: (foodId:string) => void;
-  updateQuantity: (foodId: string) => void;
+export interface FoodDetailModalProps {
+  food: Food;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export interface Testimonial {
+  id: string | number;
+  name: string;
+  role?: string;
+  rating: number;
+  text: string;
+  avatarColor: string;
+}
+
+export interface CartContextType {
+  cart: CartItem[];
+  addToCart: (food: Food) => void;
+  removeFromCart: (foodId: string) => void;
+  updateQuantity: (foodId: string, quantity: number) => void;
   increaseQuantity: (foodId: string) => void;
   decreaseQuantity: (foodId: string) => void;
   clearCart: () => void;
@@ -32,6 +42,8 @@ export type CartContextType = {
   isInCart: (foodId: string) => boolean;
   getItemQuantity: (foodId: string) => number;
 }
+
+export type Category = 'Salads' | 'Rolls' | 'Deserts' | 'Sandwiches' | 'Cakes' | 'Vegetarian' | 'Pastas'
 
 export const formSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
