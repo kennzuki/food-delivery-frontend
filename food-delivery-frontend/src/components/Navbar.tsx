@@ -3,6 +3,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import SearchFilter from './SearchFilter';
 import { Link } from 'react-router';
+import LoginButton from '../auth/LoginButton';
+
 const Navbar = () => {
   const [menu, setMenu] = useState('menu');
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +24,8 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <ul className='hidden md:flex gap-4 place-items-center capitalize cursor-pointer'>
-          <Link to='/'
+          <Link
+            to='/'
             onClick={() => setMenu('home')}
             className={`hover:text-green-500 ${
               menu === 'home' ? 'underline' : ''
@@ -30,7 +33,8 @@ const Navbar = () => {
           >
             home
           </Link>
-          <Link to='/menu'
+          <Link
+            to='/menu'
             onClick={() => setMenu('menu')}
             className={`hover:text-green-500 ${
               menu === 'menu' ? 'underline' : ''
@@ -38,7 +42,8 @@ const Navbar = () => {
           >
             menu
           </Link>
-          <Link to='/about'
+          <Link
+            to='/about'
             onClick={() => setMenu('about')}
             className={`hover:text-green-500 ${
               menu === 'about' ? 'underline' : ''
@@ -46,7 +51,8 @@ const Navbar = () => {
           >
             about
           </Link>
-          <Link to='/contacts'
+          <Link
+            to='/contacts'
             onClick={() => setMenu('contact')}
             className={`hover:text-green-500 ${
               menu === 'contact' ? 'underline' : ''
@@ -57,12 +63,12 @@ const Navbar = () => {
         </ul>
 
         <div className='hidden md:flex gap-4 place-items-center items-center'>
-          <SearchFilter searchQuery='' onSearchange={() => { }} />
+          <SearchFilter searchQuery='' onSearchange={() => {}} />
           <Link to='/cart'>
-          <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
-            shop
-            <FaShoppingCart />
-            <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
+            <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
+              shop
+              <FaShoppingCart />
+              <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
             </button>
           </Link>
           <button className='py-2 px-4 rounded border hover:bg-gray-100'>
@@ -75,19 +81,21 @@ const Navbar = () => {
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <ul className='flex flex-col gap-4 mt-4 capitalize cursor-pointer'>
           <Link to='/'>
-           <a
-            onClick={() => {
-              setMenu('home');
-              setIsOpen(false);
-            }}
-            className={`hover:text-green-500 cursor ${
-              menu === 'home' ? 'underline' : ''
-            }`}
-          >
-            home
-          </a></Link>
-         
-          <Link to='/menu'
+            <li
+              onClick={() => {
+                setMenu('home');
+                setIsOpen(false);
+              }}
+              className={`hover:text-green-500 cursor ${
+                menu === 'home' ? 'underline' : ''
+              }`}
+            >
+              home
+            </li>
+          </Link>
+
+          <Link
+            to='/menu'
             onClick={() => {
               setMenu('menu');
               setIsOpen(false);
@@ -98,7 +106,8 @@ const Navbar = () => {
           >
             menu
           </Link>
-          <Link to='/about'
+          <Link
+            to='/about'
             onClick={() => {
               setMenu('about');
               setIsOpen(false);
@@ -109,7 +118,8 @@ const Navbar = () => {
           >
             about
           </Link>
-          <Link to='/contacts'
+          <Link
+            to='/contacts'
             onClick={() => {
               setMenu('contact');
               setIsOpen(false);
@@ -118,7 +128,7 @@ const Navbar = () => {
               menu === 'contact' ? 'underline' : ''
             }`}
           >
-            contacts
+            contacts?
           </Link>
           <div className='flex flex-col gap-4 py-4'>
             <input
@@ -128,23 +138,22 @@ const Navbar = () => {
             />
             {/* cart */}
             <Link to='/cart>'>
-            <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
-              - shop - <FaShoppingCart />-{' '}
-              <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
-              -{' '}
-            </button>
-            +{' '}
-            <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 items-center relative'>
-              + shop + <FaShoppingCart />+ {/* cart count */}+{' '}
-              <span className='absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-black rounded-full text-xs font-semibold text-gray-100'>
-                + 4hy
-              </span>
+              <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
+                - shop - <FaShoppingCart />-{' '}
+                <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
+                -{' '}
+              </button>
               +{' '}
-            </button>
+              <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 items-center relative'>
+                + shop + <FaShoppingCart />+ {/* cart count */}+{' '}
+                <span className='absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-black rounded-full text-xs font-semibold text-gray-100'>
+                  + 4hy
+                </span>
+                +{' '}
+              </button>
             </Link>
-            <button className='py-2 px-4 rounded border hover:bg-gray-100'>
-              Sign in
-            </button>
+            {/* login  */}
+            <LoginButton />
           </div>
         </ul>
       </div>

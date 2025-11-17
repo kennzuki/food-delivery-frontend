@@ -9,7 +9,7 @@ const FoodDetailPage = () => {
   // name the returned data `food` to match usage below
   const { data: food, isLoading, isError, error } = useFoodById(id ?? '');
 
-  console.log('food:', food);
+  
 
   if (isLoading) {
     return (
