@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import FoodDetailModal from './pages/FoodDetailModal';
+import ProtectedRouteLocal from './components/ProtectedRouteLocal';
 
 function App() {
   return (
@@ -18,8 +19,22 @@ function App() {
 
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route
+          path='/orders'
+          element={
+            <ProtectedRouteLocal>
+              <Orders />
+            </ProtectedRouteLocal>
+          }
+        />
+        <Route
+          path='/cart'
+          element={
+            <ProtectedRouteLocal>
+              <Cart />
+            </ProtectedRouteLocal>
+          }
+        />
         <Route path='/menu' element={<Menu />} />
         <Route path='/menu/:id' element={<FoodDetailModal />} />
         <Route path='/testimonials' element={<Testimonials />} />
