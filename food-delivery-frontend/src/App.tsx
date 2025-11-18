@@ -13,8 +13,9 @@ import FoodDetailModal from './pages/FoodDetailModal';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
+
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/orders' element={<Orders />} />
@@ -26,8 +27,9 @@ function App() {
         <Route path='/contacts' element={<Contacts />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+
       <Footer />
-    </div>
+    </>
   );
 }
 

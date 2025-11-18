@@ -3,11 +3,14 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import SearchFilter from './SearchFilter';
 import { Link } from 'react-router';
+import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../auth/LoginButton';
+import LogoutButton from '../auth/LogoutButton';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('menu');
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, isLoading } = useAuth0();
 
   return (
     <nav className='max-w-6xl mx-auto p-4 md:p-8 mb-8'>
@@ -68,25 +71,27 @@ const Navbar = () => {
             <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
               shop
               <FaShoppingCart />
-              <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
+              <span className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0 flex items-center justify-center text-xs text-white'>
+                4
+              </span>
             </button>
           </Link>
-          <button className='py-2 px-4 rounded border hover:bg-gray-100'>
-            Sign in
-          </button>
+          {!isLoading && (isAuthenticated ? <LogoutButton /> : <LoginButton />)}
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <ul className='flex flex-col gap-4 mt-4 capitalize cursor-pointer'>
-          <Link to='/'>
+          <Link
+            to='/'
+            onClick={() => {
+              setMenu('home');
+              setIsOpen(false);
+            }}
+          >
             <li
-              onClick={() => {
-                setMenu('home');
-                setIsOpen(false);
-              }}
-              className={`hover:text-green-500 cursor ${
+              className={`hover:text-green-500 ${
                 menu === 'home' ? 'underline' : ''
               }`}
             >
@@ -100,12 +105,13 @@ const Navbar = () => {
               setMenu('menu');
               setIsOpen(false);
             }}
-            className={`hover:text-green-500 cursor-pointer ${
+            className={`hover:text-green-500 ${
               menu === 'menu' ? 'underline' : ''
             }`}
           >
             menu
           </Link>
+
           <Link
             to='/about'
             onClick={() => {
@@ -118,6 +124,7 @@ const Navbar = () => {
           >
             about
           </Link>
+
           <Link
             to='/contacts'
             onClick={() => {
@@ -128,32 +135,27 @@ const Navbar = () => {
               menu === 'contact' ? 'underline' : ''
             }`}
           >
-            contacts?
+            contacts
           </Link>
-          <div className='flex flex-col gap-4 py-4'>
+
+          <div className='flex flex-col gap-4 py-4 border-t'>
             <input
               type='search'
               className='p-2 border rounded'
               placeholder='Search...'
             />
-            {/* cart */}
-            <Link to='/cart>'>
-              <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 place-items-center relative'>
-                - shop - <FaShoppingCart />-{' '}
-                <div className='absolute h-4 w-4 bg-red-600 rounded-full top-0 right-0'></div>
-                -{' '}
-              </button>
-              +{' '}
-              <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 items-center relative'>
-                + shop + <FaShoppingCart />+ {/* cart count */}+{' '}
-                <span className='absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-black rounded-full text-xs font-semibold text-gray-100'>
-                  + 4hy
+
+            <Link to='/cart'>
+              <button className='w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full flex gap-2 items-center justify-center relative'>
+                shop <FaShoppingCart />
+                <span className='absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-red-600 rounded-full text-xs font-semibold text-white'>
+                  4
                 </span>
-                +{' '}
               </button>
             </Link>
-            {/* login  */}
-            <LoginButton />
+
+            {!isLoading &&
+              (isAuthenticated ? <LogoutButton /> : <LoginButton />)}
           </div>
         </ul>
       </div>

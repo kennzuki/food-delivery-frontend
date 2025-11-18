@@ -16,7 +16,7 @@ const Cart = () => {
             name: "Margherita Pizza",
             price: 899,
             quantity: 1,
-            image: "/images/pizza.jpg"
+            image: "/public/food_22.png"
         }
     ];
 
